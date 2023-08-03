@@ -8,12 +8,21 @@
         <div class="conatiner">
             <div class="row justify-content-center">
                 <div class="col-md-6">
+                <div class="alert">
+                        <?php 
+                                if(isset($_SESSION['status']))
+                                {
+                                    echo "<h5>". $_SESSION['status'] ."</h5>";
+                                    unset($_SESSION['status']);
+                                }
+                        ?>
+                    </div>
                     <div class="card shadow">
                         <div class="card-header">
                             <h5>Sign in</h5>
                         </div>
                         <div class="card-body">
-                                <form action="">
+                                <form action="codeSignIn.php" method="POST">
                                    
                                     <div class="form-group mb-3">
                                         <label for="">Email</label>
