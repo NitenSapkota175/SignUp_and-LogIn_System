@@ -24,18 +24,18 @@
                      $sql->execute();
 
 
-                    $_SESSION['stauts'] = "you are verfied so login";
+                    $_SESSION['status'] = "you are verfied so login";
                     header('Location: signin.php');
 
                 }
                 else{
-                    $_SESSION['stauts'] = "email already verified please login";
+                    $_SESSION['status'] = "email already verified please login";
                     header('Location: signin.php');
                 }
             }
             else{
 
-                $_SESSION['stauts'] = "Not allowed";
+                $_SESSION['status'] = "Not allowed";
                 header('Location: signup.php');
             }
 

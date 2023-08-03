@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    $page_title = "Signin";
+    $page_title = "Resend Email verifcation";
     include_once 'includes/header.php' ;
     include_once 'includes/navbar.php';
 ?> 
@@ -24,28 +24,22 @@
                     </div>
                     <div class="card shadow">
                         <div class="card-header">
-                            <h5>Sign in</h5>
+                            <h5>Resend Email Verification</h5>
                         </div>
                         <div class="card-body">
-                                <form action="SignInCode.php" method="POST">
+                                <form action="resend-code.php" method="POST">
                                    
                                     <div class="form-group mb-3">
                                         <label for="">Email</label>
-                                        <input type="email" name ="email"class="form-control">
+                                        <input type="email" name ="email" placeholder="Enter Email Address" class="form-control">
                                     </div>
-                                    <div class="form-group mb-3">
-                                        <label for="">password</label>
-                                        <input type="password" name ="password"class="form-control">
-                                    </div>
+                                   
                                     <div class="form-group">
-                                        <button type="sumbit" name="SignUpNoW" class="btn btn-primary">Sign in</button>
+                                        <button type="sumbit" name="resend_email_verify_btn" class="btn btn-primary">Send</button>
                                     </div>
                                 </form>
-                                <hr>
-                                <h5>
-                                    Did not recieve your verification Email?
-                                    <a href="resend-email-verification.php">Resend</a>
-                                </h5>
+                                
+                                
                         </div>
                     </div>
                 </div>
