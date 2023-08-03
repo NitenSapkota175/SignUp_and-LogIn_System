@@ -1,4 +1,6 @@
 <?php 
+
+    include 'authentication.php';
     $page_title = "Home Page";
     include_once 'includes/header.php' ;
     include_once 'includes/navbar.php';
@@ -14,6 +16,10 @@
                         </div>
                         <div class="card-body">
                         <h4>Your are signed  in</h4>
+                        <hr>
+                        <h5>Username : <?php echo $_SESSION['auth_user']['username'] ?></h5>
+                        <h5>Email : <?php echo $_SESSION['auth_user']['email'] ?></h5>
+
                         </div>
                     </div>
                 

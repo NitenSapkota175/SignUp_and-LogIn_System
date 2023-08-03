@@ -23,7 +23,7 @@
                             <h5>Sign Up</h5>
                         </div>
                         <div class="card-body">
-                                <form action="code.php" method="POST">
+                                <form action="SignUpcode.php" method="POST">
                                     <div class="form-group mb-3">
                                         <label for="">Name</label>
                                         <input type="text" name ="name"class="form-control">

@@ -13,20 +13,29 @@
 
                 $result = $sql->fetch(PDO::FETCH_ASSOC);
 
-                if($result)
+                if($result['verify_status'] == 0)
                 {
-                    $_SESSION['staus'] = "you are verfied so login";
+                    $verify_status = 1;
+                    $sql =  $pdo-> prepare('UPDATE users SET verify_status=:verify_status WHERE verify_token=:token');
+
+                    $sql->bindValue(':verify_status',$verify_status);
+                    $sql->bindValue(':token',$token);
+                    
+                     $sql->execute();
+
+
+                    $_SESSION['stauts'] = "you are verfied so login";
                     header('Location: signin.php');
 
                 }
                 else{
-                    $_SESSION['staus'] = "verification failded";
-                    header('Location: signup.php');
+                    $_SESSION['stauts'] = "email already verified please login";
+                    header('Location: signin.php');
                 }
             }
             else{
 
-                $_SESSION['staus'] = "Not allowed";
+                $_SESSION['stauts'] = "Not allowed";
                 header('Location: signup.php');
             }
 
