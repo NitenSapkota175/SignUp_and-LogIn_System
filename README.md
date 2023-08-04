@@ -9,6 +9,7 @@ This project demonstrates a user authentication system with sign-up, sign-in, an
 - User login with session management
 - Sending verification emails using PHPMailer
 - Simple and intuitive user interface
+- Rest password
 
 ## Installation
 
