@@ -78,7 +78,7 @@
                 else{
 
                     // check if password match
-
+                    if(!empty($password)){
                     if($password == $confirm_password){
 
 
@@ -113,6 +113,7 @@
                                  header('Location:signup.php');
 
                       }
+                   
                     
                  }
 
@@ -121,6 +122,13 @@
                         $_SESSION['status'] = "Password doesn't match";
                         header('Location:signup.php');
                     }
+
+                }
+                else{
+
+                    $_SESSION['status'] = "Password field cannot be empty";
+                    header('Location:signup.php');
+                }
                
                
                 }

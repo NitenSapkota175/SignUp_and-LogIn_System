@@ -1,8 +1,9 @@
 <?php 
     session_start();
-    $page_title = "Resend Email verifcation";
+    $page_title = "Signin";
     include_once 'includes/header.php' ;
     include_once 'includes/navbar.php';
+    $email = $_GET['email'];
 ?> 
 
     <div class="py-5">
@@ -24,22 +25,30 @@
                     </div>
                     <div class="card shadow">
                         <div class="card-header">
-                            <h5>Reset Password</h5>
+                            <h5>Rest your password</h5>
                         </div>
                         <div class="card-body">
                                 <form action="password-reset-code.php" method="POST">
-                                <div class="form-group mb-3">
-                                        <label for="">Email</label>
-                                        <input type="email" name ="email" placeholder="Enter Email Address" class="form-control">
-                                    </div>
-                                 
                                    
+                                    <div class="form-group mb-3">
+                                        <label for="">Email</label>
+                                        <input type="email" name ="email" value ="<?php echo $email; ?>" class="form-control">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="">New password</label>
+                                        <input type="password" name ="password"class="form-control">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="">Confirm Passowrd</label>
+                                        <input type="password" name ="confirm_password"class="form-control">
+                                    </div>
                                     <div class="form-group">
-                                        <button type="sumbit" name="password_reset_link" class="btn btn-primary">Send Password Reset Link</button>
+                                        <button type="sumbit" name="update-password" class="btn btn-primary">Rest Password</button>
+                                        
                                     </div>
                                 </form>
-                                
-                                
+                                <hr>
+                           
                         </div>
                     </div>
                 </div>
